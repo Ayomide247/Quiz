@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Rubik font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&italic&display=swap");
+
+body {
+  fontfamily: "Rubik, sans-serif";
+}
+
+/* .banner {
+  background: url("./assets/images/pattern-background-desktop-light.svg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* background: #313e51d6; */
