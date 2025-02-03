@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "../components/NavBar";
-import { useTheme } from "../components/ThemeMode";
-import { useQuizSelection } from "../components/SelectedContext";
 import { useNavigate } from "react-router-dom";
 
 const OPTION_LABEL = ["A", "B", "C", "D"];
@@ -37,13 +34,12 @@ const Questions = () => {
     setClickedOptionIndex(index);
     setErrorMsg("hidden");
 
-    // Apply the scale effect directly to the clicked option
+  
     setSelectedOptionStyle((prevStyles) => ({
       ...prevStyles,
-      [index]: "scale(0.95)",
+      [index]: "2px solid pink",
     }));
 
-    // Reset the scale effect after a short delay
     setTimeout(() => {
       setSelectedOptionStyle((prevStyles) => ({
         ...prevStyles,
@@ -82,9 +78,9 @@ const Questions = () => {
     <div>
       <NavBar />
       <div
-        className={`min-h-screen flex flex-col items-center transition-colors duration-500 ${
-          isDarkMode ? "bg-gray-900 text-white" : "bg-slate-100 text-black"
-        }`}
+        className={`min-h-screen flex flex-col items-center transition-colors duration-500 
+          ${isDarkMode ? "bg-gray-900 text-white" : "bg-slate-100 text-black"}
+        `}
       >
         {selectedQuiz && selectedQuiz.questions ? (
           <div className="container flex flex-col gap-10 px-4 py-10 mx-auto lg:flex-row lg:justify-between">
@@ -121,13 +117,13 @@ const Questions = () => {
               {currentQuestion?.options?.map((option, i) => (
                 <div
                   key={i}
-                  className={`flex justify-start items-center gap-5 p-3 rounded-lg w-full my-2 border-2 transition-colors duration-500 ${
-                    isDarkMode ? "border-gray-700" : "border-2 border-slate-50"
+                  className={`flex justify-start items-center gap-5 p-3 rounded-lg w-full my-2 border-2 transition-colors duration-500 cursor-pointer ${
+                    isDarkMode ? "border-gray-700" : "border-2 border-gray-200"
                   }`}
                   onClick={() => handleClickedOption(option, i)}
                   style={{
                     borderColor: authStyle[i] || "",
-                    transform: selectedOptionStyle[i],
+                    border: clickedOptionIndex === i ? "1px solid blue" : "",
                   }}
                 >
                   <div

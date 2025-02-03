@@ -3,7 +3,6 @@ import cssImg from "../assets/images/icon-css.svg";
 import javascriptImg from "../assets/images/icon-js.svg";
 import accessibilityImg from "../assets/images/icon-accessibility.svg";
 
- 
 const images = {
   htmlImg,
   cssImg,

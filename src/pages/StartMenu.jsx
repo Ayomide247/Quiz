@@ -18,7 +18,7 @@ const StartMenu = () => {
     setSelectedQuiz(quiz);
     navigate("/questions");
 
-    console.log(selectedQuiz);
+    // console.log(selectedQuiz);
 
     // if (selectedQuiz === null) {
     //   console.log("Select a Topic");
@@ -32,12 +32,10 @@ const StartMenu = () => {
     <div>
       <NavBar />
       <div
-        className={`min-h-screen flex flex-col items-center transition-colors duration-500 ${
-          isDarkMode ? "bg-gray-900 text-white" : "bg-slate-100 text-black"
-        } `}
+        className={`min-h-screen flex flex-col items-center transition-colors duration-500 bg-slate-100 text-black dark:bg-gray-900 dark:text-white`}
       >
-        <div className="container mx-auto px-4 py-10 flex flex-col items-center">
-          <div className="flex flex-col lg:flex-row  lg:justify-between w-full gap-10">
+        <div className="container flex flex-col items-center px-4 py-10 mx-auto">
+          <div className="flex flex-col w-full gap-10 lg:flex-row lg:justify-between">
             <div className="text-center lg:text-left">
               <h1 className="text-[44px] md:text-[54px] font-light">
                 Welcome to the
@@ -65,7 +63,7 @@ const StartMenu = () => {
                         // {selectedQuiz ? "/questions" : "#"}
                         onClick={() => handleQuizClick(quiz)}
                         key={index}
-                        className={`flex justify-start items-center gap-5 p-3 rounded-lg w-full my-2 hover:border-[#A729F5] transition-colors duration-500 ${
+                        className={`flex justify-start items-center gap-5 p-3 rounded-lg w-full my-2 hover:border-[#A729F5] transition-colors duration-500 cursor-pointer ${
                           isDarkMode
                             ? "bg-gray-800 text-white border border-gray-700"
                             : "bg-white text-black border-2 border-slate-50"
